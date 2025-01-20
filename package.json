@@ -2,7 +2,7 @@
   "name": "my-sample-project",
   "version": "1.0.0",
   "scripts": {
-    "build": "zip -r dist/asset.zip index.js"
+    "build": "mkdir -p dist && zip -r dist/asset.zip index.js"
   },
   "dependencies": {
     "express": "^4.17.1"
