@@ -1,0 +1,13 @@
+{
+  "name": "sample-project",
+  "version": "1.0.0",
+  "description": "A sample project to demonstrate GitHub Actions",
+  "main": "index.js",
+  "scripts": {
+    "build": "zip -r build.zip index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
