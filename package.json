@@ -6,7 +6,7 @@
   "scripts": {
     "build": "zip -r build.zip index.js"
   },
-  "author": "",
+  "author": "yogesh",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {}
