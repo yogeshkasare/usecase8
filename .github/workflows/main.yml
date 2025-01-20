@@ -34,17 +34,15 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create GitHub Release
+      - name: Create or Update GitHub Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.NEW_GITHUB }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            ## Changes
-            - Describe your changes here
+          name: Release ${{ github.ref }}
+          body: "Release notes for ${{ github.ref }}"
           draft: false
           prerelease: false
 
@@ -54,6 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.NEW_GITHUB }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: YOGESH.zip
-          asset_name: YOGESH.zip
+          asset_path: dist/asset.zip
+          asset_name: asset.zip
           asset_content_type: application/zip
